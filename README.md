@@ -63,11 +63,11 @@ $$h_k = h_{N - 1 - k}, \text{ for } k = 0, 1,...,[\frac{N - 1}{2}].$$
 By factoring out common coefficients, the difference equation can be rewritten to perform pre-additions before multiplications:
 + for an even number of taps ($N$ is even):
 
-  $$y[n] = \sum_{k = 0}^{\frac{N}{2} - 1}{h_k \cdot (x[n - k] + x[n - (N - 1 - k)])}$$
+$$y[n] = \sum_{k = 0}^{\frac{N}{2} - 1}{h_k \cdot (x[n - k] + x[n - (N - 1 - k)])}$$
 
 + for an odd number of taps ($N$ is odd):
 
-  $$y[n] = h_{\frac{N - 1}{2}} \cdot x[n - \frac{N - 1}{2}] + \sum_{k = 0}^{\frac{N - 3}{2}}{h_k \cdot (x[n - k] + x[n - (N - 1 - k)])}$$
+$$y[n] = h_{\frac{N - 1}{2}} \cdot x[n - \frac{N - 1}{2}] + \sum_{k = 0}^{\frac{N - 3}{2}}{h_k \cdot (x[n - k] + x[n - (N - 1 - k)])}$$
 
 This pre-adder structure reduces the required number of physical multipliers (DSP blocks) from $N$ to $M = [\frac{N}{2}]$.
 
@@ -83,7 +83,7 @@ The architecture consists of five fully pipelined processing stages to maximize 
 
 ![alt text](img/RTL_adder_tree.png)
 
-5. Output and Valid Pipeline: registers the final output $y[n]$ and propagates the data validity strobe `valid_in` $\rarr$ `valid_out`. The total latency from `in_valid` to `out_valid` is given by $Latency = 1_{shift} + 1_{preadd} + 1_{mult} + [\log_2{M}]_{tree} + 1_{out}$.
+5. Output and Valid Pipeline: registers the final output $y[n]$ and propagates the data validity strobe `valid_in` $\rightarrow$ `valid_out`. The total latency from `in_valid` to `out_valid` is given by ${\mathrm{Latency}} = 1_{\mathrm{shift}} + 1_{\mathrm{preadd}} + 1_{\mathrm{mult}} + [\log_2{M}]_{\mathrm{tree}} + 1_{\mathrm{out}}$.
 
 ![alt text](img/RTL_FIR.png)
 
