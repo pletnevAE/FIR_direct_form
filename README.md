@@ -83,7 +83,7 @@ The architecture consists of five fully pipelined processing stages to maximize 
 
 ![alt text](img/RTL_adder_tree.png)
 
-5. Output and Valid Pipeline: registers the final output $y[n]$ and propagates the data validity strobe `valid_in` $\rightarrow$ `valid_out`. The total latency from `in_valid` to `out_valid` is given by ${\mathrm{Latency}} = 1_{\mathrm{shift}} + 1_{\mathrm{preadd}} + 1_{\mathrm{mult}} + [\log_2{M}]_{\mathrm{tree}} + 1_{\mathrm{out}}$.
+5. Output and Valid Pipeline: registers the final output $y[n]$ and propagates the data validity strobe `valid_in` $\rightarrow$ `valid_out`. The total latency from `in_valid` to `out_valid` is given by ${\text{Latency}} = 1_{\text{shift}} + 1_{\text{preadd}} + 1_{\text{mult}} + [\log_2{M}]_{\text{tree}} + 1_{\text{out}}$.
 
 ![alt text](img/RTL_FIR.png)
 
